@@ -53,7 +53,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
             } else {
                cell.shippingLabel.isHighlighted = true
             }
-            
+            tableView.reloadData()
         }
         return cell
     }    
