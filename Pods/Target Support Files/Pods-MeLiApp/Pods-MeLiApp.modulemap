@@ -1,0 +1,6 @@
+framework module Pods_MeLiApp {
+  umbrella header "Pods-MeLiApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

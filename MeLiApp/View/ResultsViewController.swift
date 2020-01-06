@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ResultsViewController: UIViewController, UITableViewDataSource {
 
@@ -46,14 +47,15 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultTableViewCell
         let index = indexPath.row
         DispatchQueue.main.async {
-            cell.titleLabel.text = self.searchViewModel.getItemTitle(index: index)
-            cell.priceLabel.text = String(self.searchViewModel.getItemPrice(index: index))
-            if let freeShipping = self.searchViewModel.getItemShipping(index: index)?.freeShipping {
+            let imageItemString = self.searchViewModel.getItemThumbnail(index: index)
+            cell.imageItem.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
+            cell.priceLabel.text = "$"+String(self.searchViewModel.getItemPrice(index: index))
+            if (self.searchViewModel.getItemShipping(index: index)?.freeShipping) != nil {
                 cell.shippingLabel.text = "Envío gratis"
             } else {
                cell.shippingLabel.isHighlighted = true
             }
-            tableView.reloadData()
+//            tableView.reloadData()
         }
         return cell
     }    
