@@ -37,6 +37,24 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
         })
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let cell = sender as? UITableViewCell,
+                let index = resultTableView.indexPath(for: cell) else { return }
+            if let detailtVC = segue.destination as? DetailViewController {
+                DispatchQueue.main.async {
+                    let imageItemString = self.searchViewModel.getItemThumbnail(index: index.row)
+                    detailtVC.itemImage.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
+                    detailtVC.itemQuantity.text = String(self.searchViewModel.getCondition(index: index.row)) + " - " + String(self.searchViewModel.getSoldQuantity(index: index.row))
+                    detailtVC.itemPrice.text = "$" + String(self.searchViewModel.getItemPrice(index: index.row))
+                    detailtVC.itemStock.text = "Stock: " + String(self.searchViewModel.getItemQuantity(index: index.row))
+                }
+               
+            }
+        }
+    }
+    
     // MARK: - Datasource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +67,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
         DispatchQueue.main.async {
             let imageItemString = self.searchViewModel.getItemThumbnail(index: index)
             cell.imageItem.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
-            cell.priceLabel.text = "$"+String(self.searchViewModel.getItemPrice(index: index))
+            cell.titleLabel.text = self.searchViewModel.getItemTitle(index: index)
+            cell.priceLabel.text = "$" + String(self.searchViewModel.getItemPrice(index: index))
             if (self.searchViewModel.getItemShipping(index: index)?.freeShipping) != nil {
                 cell.shippingLabel.text = "Envío gratis"
             } else {

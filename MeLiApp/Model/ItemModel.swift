@@ -46,6 +46,7 @@ class Result: Codable {
     let id: String
     let title: String
     let price: Double
+    let condition: String
     let availableQuantity, soldQuantity: Int
     let stopTime: String
     let permalink: String
@@ -55,10 +56,11 @@ class Result: Codable {
     let originalPrice: Double?
     let officialStoreID: Int?
     let catalogProductID: String?
+    let installments: Installments
     
     enum CodingKeys: String, CodingKey {
         case id
-        case title, price
+        case title, price, condition
         case availableQuantity = "available_quantity"
         case soldQuantity = "sold_quantity"
         case stopTime = "stop_time"
@@ -68,9 +70,10 @@ class Result: Codable {
         case originalPrice = "original_price"
         case officialStoreID = "official_store_id"
         case catalogProductID = "catalog_product_id"
+        case installments
     }
     
-    init(id: String, title: String, price: Double, availableQuantity: Int, soldQuantity: Int, stopTime: String, permalink: String, thumbnail: String, acceptsMercadopago: Bool, shipping: Shipping, originalPrice: Double?, officialStoreID: Int?, catalogProductID: String?) {
+    init(id: String, title: String, price: Double, availableQuantity: Int, soldQuantity: Int, stopTime: String, permalink: String, thumbnail: String, acceptsMercadopago: Bool, shipping: Shipping, originalPrice: Double?, officialStoreID: Int?, catalogProductID: String?, installments: Installments, condition: String) {
         self.id = id
         self.title = title
         self.price = price
@@ -84,6 +87,8 @@ class Result: Codable {
         self.originalPrice = originalPrice
         self.officialStoreID = officialStoreID
         self.catalogProductID = catalogProductID
+        self.installments = installments
+        self.condition = condition
     }
 }
 
@@ -97,6 +102,13 @@ class Shipping: Codable {
     
     init(freeShipping: Bool) {
         self.freeShipping = freeShipping
+    }
+}
+
+class Installments: Codable {
+    let quantity: Int
+    init(quantity: Int) {
+        self.quantity = quantity
     }
 }
 

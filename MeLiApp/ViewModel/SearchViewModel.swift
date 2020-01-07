@@ -60,4 +60,16 @@ class SearchViewModel {
     func getTotalItems() -> Int {
         return serchedItems.count
     }
+    
+    func getAvailableQuantity(index: Int) -> Int {
+        return serchedItems[index].availableQuantity
+    }
+    
+    func getSoldQuantity(index: Int) -> Int {
+        return serchedItems[index].soldQuantity
+    }
+    
+    func getCondition(index: Int) -> String {
+        return serchedItems[index].condition
+    }
 }
