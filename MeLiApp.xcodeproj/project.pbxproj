@@ -16,7 +16,7 @@
 		7D16774A23C152A9006F665A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16774923C152A9006F665A /* NetworkManager.swift */; };
 		7D74A61523C40B9A0079C37A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A61423C40B9A0079C37A /* DetailViewController.swift */; };
 		7D9F071523C22CF500DFDF56 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F071423C22CF500DFDF56 /* ResultsViewController.swift */; };
-		7D9F071723C22E7C00DFDF56 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F071623C22E7C00DFDF56 /* SearchViewModel.swift */; };
+		7D9F071723C22E7C00DFDF56 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F071623C22E7C00DFDF56 /* ResultViewModel.swift */; };
 		7D9F071923C2319E00DFDF56 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F071823C2319E00DFDF56 /* ItemModel.swift */; };
 		7D9F071B23C2454D00DFDF56 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F071A23C2454D00DFDF56 /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +32,7 @@
 		7D16774923C152A9006F665A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D74A61423C40B9A0079C37A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7D9F071423C22CF500DFDF56 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		7D9F071623C22E7C00DFDF56 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		7D9F071623C22E7C00DFDF56 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		7D9F071823C2319E00DFDF56 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		7D9F071A23C2454D00DFDF56 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		9CF140F86C6B92B8CEA0F60F /* Pods-MeLiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeLiApp.release.xcconfig"; path = "Target Support Files/Pods-MeLiApp/Pods-MeLiApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		7D16774623C1520A006F665A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7D9F071623C22E7C00DFDF56 /* SearchViewModel.swift */,
+				7D9F071623C22E7C00DFDF56 /* ResultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 				7D9F071923C2319E00DFDF56 /* ItemModel.swift in Sources */,
 				7D16774A23C152A9006F665A /* NetworkManager.swift in Sources */,
 				7D9F071B23C2454D00DFDF56 /* ResultTableViewCell.swift in Sources */,
-				7D9F071723C22E7C00DFDF56 /* SearchViewModel.swift in Sources */,
+				7D9F071723C22E7C00DFDF56 /* ResultViewModel.swift in Sources */,
 				7D16773623C14CD9006F665A /* SearchViewController.swift in Sources */,
 				7D16773423C14CD9006F665A /* AppDelegate.swift in Sources */,
 				7D9F071523C22CF500DFDF56 /* ResultsViewController.swift in Sources */,

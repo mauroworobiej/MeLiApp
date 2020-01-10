@@ -1,5 +1,5 @@
 //
-//  SearchViewModel.swift
+//  ResultViewModel.swift
 //  MeLiApp
 //
 //  Created by Mauro Worobiej on 05/01/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchViewModel {
+class ResultViewModel {
     
     private let networkManager = NetworkManager()
     private let url : URL
