@@ -24,12 +24,17 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.bringSubviewToFront(self.activityIndicator)
-        activityIndicator.startAnimating()
-        // due to the Async process we pass a completion to wait the data load
+        activityIndicator.startAnimating()  
         
-        //        TODO:- user feedback when the result is empty
-        self.detailViwModel = DetailViewModel(itemId: itemId, completion: { [weak self] in
+        // I'm implement DispatchGroup to avoid the UICollectionViewDataSource methods
+        // being called before the detailViewModel block finish
+        let group = DispatchGroup()
+        group.enter()
 
+        //        TODO:- user feedback when the result is empty
+        
+        // due to the Async process we pass a completion to wait the data load
+        self.detailViwModel = DetailViewModel(itemId: itemId, completion: { [weak self] in
             guard let strongSelf = self else { return }
             DispatchQueue.main.async {
                 strongSelf.detailCollectionView.reloadData()
@@ -44,11 +49,13 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
                 strongSelf.itemPrice.text = "$" + strongSelf.detailViwModel.getItemPrice()
                 strongSelf.itemTitle.text = strongSelf.detailViwModel.getItemTitle()
             }
+            group.leave()
         })
+        group.wait()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5//detailViwModel.getTotalItemImage()
+        return detailViwModel.getTotalItemImage()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
