@@ -79,7 +79,7 @@ class Result: Codable {
         self.price = price
         self.availableQuantity = availableQuantity
         self.soldQuantity = soldQuantity
-        self.stopTime = stopTime
+//        self.stopTime = stopTime
         self.permalink = permalink
         self.thumbnail = thumbnail
         self.acceptsMercadopago = acceptsMercadopago

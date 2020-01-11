@@ -13,18 +13,25 @@ class ResultViewModel {
     private let networkManager = NetworkManager()
     private let url : URL
     private var serchedItems: [Result] = []
-    
+    // TODO: - usar curl
     init(itemName: String, completion: @escaping () -> Void) {
-        let urlString = "https://api.mercadolibre.com/sites/MLA/search?q=" + itemName
-        guard let url = URL(string: urlString) else {
+//        let urlString = "https://api.mercadolibre.com/sites/MLA/search?q=" + itemName
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.mercadolibre.com"
+        urlComponents.path = "/sites/MLA/search"
+        let queryItem = URLQueryItem(name: "q", value: itemName)
+        urlComponents.queryItems = [queryItem]
+        
+        guard let url = urlComponents.url else {//URL(string: urlString) else {
             fatalError("Invalid URL")
         }
         self.url = url
         // I pass a completion to wait the data load
-        self.fetchItems(completion)
+        self.fetchItemsByName(completion)
     }
     
-    private func fetchItems(_ completion: @escaping () -> Void) {
+    private func fetchItemsByName(_ completion: @escaping () -> Void) {
         networkManager.performRequest(type: ItemModel.self, url: url) { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {

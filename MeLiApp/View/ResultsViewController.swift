@@ -27,6 +27,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
             print("Failed getting Item Name")
             return
         }
+        //        TODO:- user feedback when the result is empty
         self.resultViewModel = ResultViewModel(itemName: itemName, completion: { [weak self] in
             guard let strongSelf = self else { return }
             DispatchQueue.main.async {
