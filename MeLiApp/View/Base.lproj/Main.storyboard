@@ -213,6 +213,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ueu-9h-SaG">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -223,6 +226,8 @@
                             <constraint firstItem="OyW-Kd-ugU" firstAttribute="top" secondItem="Tyh-uH-mo5" secondAttribute="bottom" constant="10" id="GhJ-Rz-NSZ"/>
                             <constraint firstItem="OyW-Kd-ugU" firstAttribute="leading" secondItem="5Ny-VU-1d9" secondAttribute="leading" constant="10" id="LKH-bM-hIb"/>
                             <constraint firstItem="cra-eK-Ovu" firstAttribute="leading" secondItem="5Ny-VU-1d9" secondAttribute="leading" constant="10" id="MXe-qB-KWU"/>
+                            <constraint firstItem="Ueu-9h-SaG" firstAttribute="centerX" secondItem="cTE-yI-lD6" secondAttribute="centerX" id="Mg5-px-Lel"/>
+                            <constraint firstItem="Ueu-9h-SaG" firstAttribute="centerY" secondItem="cTE-yI-lD6" secondAttribute="centerY" id="NNU-KV-R5n"/>
                             <constraint firstItem="5Ny-VU-1d9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tyh-uH-mo5" secondAttribute="trailing" constant="10" id="PR2-DH-JEM"/>
                             <constraint firstItem="PXz-gV-0oK" firstAttribute="leading" secondItem="5Ny-VU-1d9" secondAttribute="leading" id="RDn-OS-tdz"/>
                             <constraint firstItem="5Ny-VU-1d9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pje-1i-SdX" secondAttribute="trailing" constant="10" id="Ucy-pY-Y4q"/>
@@ -237,6 +242,7 @@
                         <viewLayoutGuide key="safeArea" id="5Ny-VU-1d9"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ueu-9h-SaG" id="Niv-5s-het"/>
                         <outlet property="itemImage" destination="PXz-gV-0oK" id="YHX-P2-VEk"/>
                         <outlet property="itemPrice" destination="pje-1i-SdX" id="4Lg-Dk-xW7"/>
                         <outlet property="itemQuantity" destination="Tyh-uH-mo5" id="5ID-4M-haa"/>

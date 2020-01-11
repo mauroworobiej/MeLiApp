@@ -11,11 +11,19 @@ import Foundation
 class ResultViewModel {
     
     private let networkManager = NetworkManager()
-    private let url : URL
+//    private let url : URL
     private var serchedItems: [Result] = []
-    // TODO: - usar curl
+    
     init(itemName: String, completion: @escaping () -> Void) {
 //        let urlString = "https://api.mercadolibre.com/sites/MLA/search?q=" + itemName
+        
+//        self.url = url
+        // I pass a completion to wait the data load
+        self.fetchItemsByName(completion, itemName: itemName)
+    }
+    
+    private func fetchItemsByName(_ completion: @escaping () -> Void, itemName: String) {
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.mercadolibre.com"
@@ -26,12 +34,6 @@ class ResultViewModel {
         guard let url = urlComponents.url else {//URL(string: urlString) else {
             fatalError("Invalid URL")
         }
-        self.url = url
-        // I pass a completion to wait the data load
-        self.fetchItemsByName(completion)
-    }
-    
-    private func fetchItemsByName(_ completion: @escaping () -> Void) {
         networkManager.performRequest(type: ItemModel.self, url: url) { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
@@ -44,6 +46,10 @@ class ResultViewModel {
         }
     }
     
+    func getItemId(index: Int) -> String {
+        return serchedItems[index].id
+    }
+    
     func getItemTitle(index: Int) -> String {
         return serchedItems[index].title
     }
@@ -52,9 +58,9 @@ class ResultViewModel {
         return serchedItems[index].price
     }
     
-    func getItemQuantity(index: Int) -> Int {
-        return serchedItems[index].availableQuantity
-    }
+//    func getItemQuantity(index: Int) -> Int {
+//        return serchedItems[index].availableQuantity
+//    }
     
     func getItemThumbnail(index: Int) -> String {
         return serchedItems[index].thumbnail
@@ -64,19 +70,19 @@ class ResultViewModel {
         return serchedItems[index].shipping
     }
     
-    func getTotalItems() -> Int {
-        return serchedItems.count
-    }
+//    func getTotalItems() -> Int {
+//        return serchedItems.count
+//    }
     
-    func getAvailableQuantity(index: Int) -> Int {
-        return serchedItems[index].availableQuantity
-    }
-    
-    func getSoldQuantity(index: Int) -> Int {
-        return serchedItems[index].soldQuantity
-    }
-    
-    func getCondition(index: Int) -> String {
-        return serchedItems[index].condition
-    }
+//    func getAvailableQuantity(index: Int) -> Int {
+//        return serchedItems[index].availableQuantity
+//    }
+//    
+//    func getSoldQuantity(index: Int) -> Int {
+//        return serchedItems[index].soldQuantity
+//    }
+//    
+//    func getCondition(index: Int) -> String {
+//        return serchedItems[index].condition
+//    }
 }

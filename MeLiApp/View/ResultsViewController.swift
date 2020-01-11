@@ -44,13 +44,16 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
             guard let cell = sender as? UITableViewCell,
                 let index = resultTableView.indexPath(for: cell) else { return }
             if let detailtVC = segue.destination as? DetailViewController {
-                DispatchQueue.main.async {
-                    let imageItemString = self.resultViewModel.getItemThumbnail(index: index.row)
-                    detailtVC.itemImage.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
-                    detailtVC.itemQuantity.text = String(self.resultViewModel.getCondition(index: index.row)) + " - " + String(self.resultViewModel.getSoldQuantity(index: index.row))
-                    detailtVC.itemPrice.text = "$" + String(self.resultViewModel.getItemPrice(index: index.row))
-                    detailtVC.itemStock.text = "Stock: " + String(self.resultViewModel.getItemQuantity(index: index.row))
-                }
+                detailtVC.itemId = self.resultViewModel.getItemId(index: index.row)
+                
+//                TODO: - Let all this to the DetailViewController
+//                DispatchQueue.main.async {
+//                    let imageItemString = self.resultViewModel.getItemThumbnail(index: index.row)
+//                    detailtVC.itemImage.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
+//                    detailtVC.itemQuantity.text = String(self.resultViewModel.getCondition(index: index.row)) + " - " + String(self.resultViewModel.getSoldQuantity(index: index.row))
+//                    detailtVC.itemPrice.text = "$" + String(self.resultViewModel.getItemPrice(index: index.row))
+//                    detailtVC.itemStock.text = "Stock: " + String(self.resultViewModel.getItemQuantity(index: index.row))
+//                }
                
             }
         }
