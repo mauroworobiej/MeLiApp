@@ -9,14 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeLiApp/ViewModel/ResultViewModel.swift"
-            timestampString = "600444793.945797"
+            filePath = "MeLiApp/View/DetailViewController.swift"
+            timestampString = "600461519.744447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "init(itemName:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "74"
+            endingLineNumber = "74">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -70,9 +70,9 @@ class ResultViewModel {
         return serchedItems[index].shipping
     }
     
-//    func getTotalItems() -> Int {
-//        return serchedItems.count
-//    }
+    func getTotalItems() -> Int {
+        return serchedItems.count
+    }
     
 //    func getAvailableQuantity(index: Int) -> Int {
 //        return serchedItems[index].availableQuantity

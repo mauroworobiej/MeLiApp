@@ -48,11 +48,15 @@ class DetailViewModel {
         }
     }
     
-    func getItemImage() -> [Picture] {
-        return itemDetail.pictures
+    func getItemImage(index: Int) -> String {
+        return itemDetail.pictures[index].url
     }
     
-    func getItemQuantity() -> String? {
+    func getTotalItemImage() -> Int {
+        return itemDetail.pictures.count
+    }
+    
+    func getItemSoldQuantity() -> String? {
         return String(itemDetail.soldQuantity)
     }
     
@@ -66,5 +70,9 @@ class DetailViewModel {
     
     func getItemStock() -> String {
         return String(itemDetail.availableQuantity)
+    }
+    
+    func getItemTitle() -> String {
+        return String(itemDetail.title)
     }
 }
