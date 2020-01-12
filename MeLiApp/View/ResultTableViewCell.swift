@@ -14,5 +14,6 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var shippingLabel: UILabel!
+    @IBOutlet weak var favIcon: UIImageView!
     
 }

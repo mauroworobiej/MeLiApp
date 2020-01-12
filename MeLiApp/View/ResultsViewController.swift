@@ -45,16 +45,6 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
                 let index = resultTableView.indexPath(for: cell) else { return }
             if let detailtVC = segue.destination as? DetailViewController {
                 detailtVC.itemId = self.resultViewModel.getItemId(index: index.row)
-                
-//                TODO: - Let all this to the DetailViewController
-//                DispatchQueue.main.async {
-//                    let imageItemString = self.resultViewModel.getItemThumbnail(index: index.row)
-//                    detailtVC.itemImage.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
-//                    detailtVC.itemQuantity.text = String(self.resultViewModel.getCondition(index: index.row)) + " - " + String(self.resultViewModel.getSoldQuantity(index: index.row))
-//                    detailtVC.itemPrice.text = "$" + String(self.resultViewModel.getItemPrice(index: index.row))
-//                    detailtVC.itemStock.text = "Stock: " + String(self.resultViewModel.getItemQuantity(index: index.row))
-//                }
-               
             }
         }
     }
@@ -73,12 +63,14 @@ class ResultsViewController: UIViewController, UITableViewDataSource {
             cell.imageItem.sd_setImage(with: URL(string: imageItemString), placeholderImage: nil, options: [], completed: nil)
             cell.titleLabel.text = self.resultViewModel.getItemTitle(index: index)
             cell.priceLabel.text = "$" + String(self.resultViewModel.getItemPrice(index: index))
-            if (self.resultViewModel.getItemShipping(index: index)?.freeShipping) != nil {
-                cell.shippingLabel.text = "Envío gratis"
+            if (self.resultViewModel.getItemShipping(index: index)?.freeShipping) != true {
+                cell.shippingLabel.isHidden = true
             } else {
-               cell.shippingLabel.isHighlighted = true
+               cell.shippingLabel.text = "Envío gratis"
             }
-//            tableView.reloadData()
+            // Avoid the original image color
+            cell.favIcon.image = cell.favIcon.image?.withRenderingMode(.alwaysTemplate)
+            cell.favIcon.tintColor = . blue
         }
         return cell
     }    
