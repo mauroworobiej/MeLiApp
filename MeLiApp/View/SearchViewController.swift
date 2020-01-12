@@ -26,18 +26,20 @@ class SearchViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-//
-//    @IBAction func searchItem(_ sender: UIButton) {
-//        if searchBar.text != "" {
-//            performSegue(withIdentifier: "resultSegue", sender: nil)
-//        }
-//    }
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
             if let resultVC = segue.destination as? ResultsViewController {
-                resultVC.itemName = searchBar.text ?? ""
+                guard let searchText = searchBar.text else {
+                    return
+                }
+                if searchText.count < 1 {
+                    let alert = UIAlertController(title: "Atencion", message: "El campo de busqueda debe contener texto, por favor introduzca el nombre del articulo a buscar", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    return
+                }
+                resultVC.itemName = searchBar.text
             }
         }
     }
