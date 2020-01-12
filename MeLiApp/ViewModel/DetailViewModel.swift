@@ -15,6 +15,7 @@ class DetailViewModel {
     private let networkManager = NetworkManager()
 //    private let url : URL
     private var itemDetail: DetailModel!
+    private var itemDescription: DescriptionModel!
     
     init(itemId: String, completion: @escaping () -> Void) {
 //        let urlString = "https://api.mercadolibre.com/sites/MLA/search?q=" + itemName
@@ -41,6 +42,29 @@ class DetailViewModel {
             switch result {
             case .success(let parsedJson):
                 strongSelf.itemDetail = parsedJson
+            case .failure(let error):
+                print("failed parsing JSON", error)
+            }
+//            completion()
+            strongSelf.fetchItemDescription(completion, itemId: itemId)
+        }
+    }
+    
+    private func fetchItemDescription(_ completion: @escaping () -> Void, itemId: String) {
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.mercadolibre.com"
+        urlComponents.path = "/items/" + itemId + "/descriptions"
+        
+        guard let url = urlComponents.url else {//URL(string: urlString) else {
+            fatalError("Invalid URL")
+        }
+        networkManager.performRequest(type: DescriptionModel.self, url: url) { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let parsedJson):
+                strongSelf.itemDescription = parsedJson
             case .failure(let error):
                 print("failed parsing JSON", error)
             }
@@ -74,5 +98,9 @@ class DetailViewModel {
     
     func getItemTitle() -> String {
         return String(itemDetail.title)
+    }
+    
+    func getItemDescription() -> String? {
+        return itemDescription.first?.plainText
     }
 }

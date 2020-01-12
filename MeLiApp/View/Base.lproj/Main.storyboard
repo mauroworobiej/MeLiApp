@@ -287,6 +287,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Ueu-9h-SaG" id="Niv-5s-het"/>
+                        <outlet property="descriptionText" destination="ERK-xh-YRK" id="q5A-AL-osr"/>
                         <outlet property="detailCollectionView" destination="Cs1-sb-jNH" id="w99-5R-6up"/>
                         <outlet property="itemPrice" destination="pje-1i-SdX" id="4Lg-Dk-xW7"/>
                         <outlet property="itemQuantity" destination="Tyh-uH-mo5" id="5ID-4M-haa"/>

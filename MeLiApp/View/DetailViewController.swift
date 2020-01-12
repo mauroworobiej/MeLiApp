@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var itemTitle: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var descriptionText: UITextView!
     
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
                 strongSelf.itemStock.text = "Cantidad disponible: " + strongSelf.detailViwModel.getItemStock()
                 strongSelf.itemPrice.text = "$" + strongSelf.detailViwModel.getItemPrice()
                 strongSelf.itemTitle.text = strongSelf.detailViwModel.getItemTitle()
+                strongSelf.descriptionText.text = strongSelf.detailViwModel.getItemDescription()
             }
             group.leave()
         })
