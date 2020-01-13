@@ -162,12 +162,9 @@
 		7D16774723C15220006F665A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7D16773523C14CD9006F665A /* SearchViewController.swift */,
-				7D9F071423C22CF500DFDF56 /* ResultsViewController.swift */,
-				7D9F071A23C2454D00DFDF56 /* ResultTableViewCell.swift */,
-				7D74A61423C40B9A0079C37A /* DetailViewController.swift */,
+				7D5BD8FA23CC258B0047AEE9 /* Cells */,
+				7D5BD8F923CC254F0047AEE9 /* ViewControllers */,
 				7D16773723C14CD9006F665A /* Main.storyboard */,
-				7D8E4EA823CA3E1800E0BD57 /* DetailCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +202,25 @@
 				7D5BD8F523CBD72B0047AEE9 /* ViewModelProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7D5BD8F923CC254F0047AEE9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D16773523C14CD9006F665A /* SearchViewController.swift */,
+				7D9F071423C22CF500DFDF56 /* ResultsViewController.swift */,
+				7D74A61423C40B9A0079C37A /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7D5BD8FA23CC258B0047AEE9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D9F071A23C2454D00DFDF56 /* ResultTableViewCell.swift */,
+				7D8E4EA823CA3E1800E0BD57 /* DetailCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
