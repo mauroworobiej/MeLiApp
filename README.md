@@ -59,6 +59,6 @@ Para hacer uso del framework antes mencionado es necesario agregar dentro de las
 
 ## Testing
 
-Implemente el testeo algunos metodos de DetailViewModel. Para realizar esto fue necesario que a los metodos encargados de realizar la consulta a la API se les pudiera inyectar una dependencia. 
+Implemente el testeo algunos metodos de DetailViewModel mediante Unit Testing. Para realizar esto fue necesario que a los metodos encargados de realizar la consulta a la API se les pudiera inyectar una dependencia. 
 Para esto se creo un protocolo que extienden tanto las clases que utiliza la app para realizar la consulta, como asi tambien una clase que mockea las respuestas de la API.
 
