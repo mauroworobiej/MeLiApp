@@ -10,39 +10,20 @@ import Foundation
 
 class ResultViewModel {
     
-    private let networkManager = NetworkManager()
-//    private let url : URL
+    private let networkManager: FetchItemProtocol
     private var serchedItems: [Result] = []
     
-    init(itemName: String, completion: @escaping () -> Void) {
-//        let urlString = "https://api.mercadolibre.com/sites/MLA/search?q=" + itemName
-        
-//        self.url = url
-        // I pass a completion to wait the data load
-        self.fetchItemsByName(completion, itemName: itemName)
-    }
-    
-    private func fetchItemsByName(_ completion: @escaping () -> Void, itemName: String) {
-        
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "api.mercadolibre.com"
-        urlComponents.path = "/sites/MLA/search"
-        let queryItem = URLQueryItem(name: "q", value: itemName)
-        urlComponents.queryItems = [queryItem]
-        
-        guard let url = urlComponents.url else {//URL(string: urlString) else {
-            fatalError("Invalid URL")
-        }
-        networkManager.performRequest(type: ItemModel.self, url: url) { [weak self] result in
+    init(networkManager: FetchItemProtocol = NetworkManager(), itemName: String, completion: @escaping () -> Void) {
+        self.networkManager = networkManager
+        networkManager.fetchItemsByName(itemName: itemName) { [weak self] (result) in
             guard let strongSelf = self else { return }
             switch result {
-            case .success(let parsedJson):
-                strongSelf.serchedItems = parsedJson.results
-            case .failure(let error):
-                print("failed parsing JSON", error)
+                case .success(let data):
+                    strongSelf.serchedItems = data.results
+                case .failure(let error):
+                    print("Fetch Error: \(error)")
             }
-            completion()
+        completion()
         }
     }
     
@@ -58,10 +39,6 @@ class ResultViewModel {
         return serchedItems[index].price
     }
     
-//    func getItemQuantity(index: Int) -> Int {
-//        return serchedItems[index].availableQuantity
-//    }
-    
     func getItemThumbnail(index: Int) -> String {
         return serchedItems[index].thumbnail
     }
@@ -73,16 +50,4 @@ class ResultViewModel {
     func getTotalItems() -> Int {
         return serchedItems.count
     }
-    
-//    func getAvailableQuantity(index: Int) -> Int {
-//        return serchedItems[index].availableQuantity
-//    }
-//    
-//    func getSoldQuantity(index: Int) -> Int {
-//        return serchedItems[index].soldQuantity
-//    }
-//    
-//    func getCondition(index: Int) -> String {
-//        return serchedItems[index].condition
-//    }
 }

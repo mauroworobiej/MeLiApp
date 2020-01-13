@@ -10,36 +10,15 @@ import Foundation
 
 // MARK: - ItemModel
 struct ItemModel: Codable {
-//    let query: String
-//    let paging: Paging
     let results: [Result]
     enum CodingKeys: String, CodingKey {
-        case /*query, paging,*/ results
+        case results
     }
     
-    init(/*query: String, paging: Paging, */results: [Result]) {
-//        self.query = query
-//        self.paging = paging
+    init(results: [Result]) {
         self.results = results
     }
 }
-
-// MARK: - Paging
-//class Paging: Codable {
-//    let total, offset, limit, primaryResults: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case total, offset, limit
-//        case primaryResults = "primary_results"
-//    }
-//
-//    init(total: Int, offset: Int, limit: Int, primaryResults: Int) {
-//        self.total = total
-//        self.offset = offset
-//        self.limit = limit
-//        self.primaryResults = primaryResults
-//    }
-//}
 
 // MARK: - Result
 class Result: Codable {
@@ -48,7 +27,6 @@ class Result: Codable {
     let price: Double
     let condition: String
     let availableQuantity, soldQuantity: Int
-//    let stopTime: String
     let permalink: String
     let thumbnail: String
     let acceptsMercadopago: Bool
@@ -63,7 +41,6 @@ class Result: Codable {
         case title, price, condition
         case availableQuantity = "available_quantity"
         case soldQuantity = "sold_quantity"
-//        case stopTime = "stop_time"
         case permalink, thumbnail
         case acceptsMercadopago = "accepts_mercadopago"
         case shipping
@@ -79,7 +56,6 @@ class Result: Codable {
         self.price = price
         self.availableQuantity = availableQuantity
         self.soldQuantity = soldQuantity
-//        self.stopTime = stopTime
         self.permalink = permalink
         self.thumbnail = thumbnail
         self.acceptsMercadopago = acceptsMercadopago

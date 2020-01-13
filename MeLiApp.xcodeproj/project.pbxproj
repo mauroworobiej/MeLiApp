@@ -14,6 +14,10 @@
 		7D16773B23C14CDA006F665A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D16773A23C14CDA006F665A /* Assets.xcassets */; };
 		7D16773E23C14CDA006F665A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D16773C23C14CDA006F665A /* LaunchScreen.storyboard */; };
 		7D16774A23C152A9006F665A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D16774923C152A9006F665A /* NetworkManager.swift */; };
+		7D5BD8EA23CBC9FE0047AEE9 /* MeLiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5BD8E923CBC9FE0047AEE9 /* MeLiAppTests.swift */; };
+		7D5BD8F223CBCC880047AEE9 /* ResponseById.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D5BD8F123CBCC880047AEE9 /* ResponseById.json */; };
+		7D5BD8F623CBD72B0047AEE9 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5BD8F523CBD72B0047AEE9 /* ViewModelProtocols.swift */; };
+		7D5BD8F823CBD9710047AEE9 /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5BD8F723CBD9710047AEE9 /* MockNetworkRequest.swift */; };
 		7D68BA2F23C7F89F001D97E9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68BA2E23C7F89F001D97E9 /* DetailViewModel.swift */; };
 		7D68BA3123C7F94C001D97E9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68BA3023C7F94C001D97E9 /* DetailModel.swift */; };
 		7D74A61523C40B9A0079C37A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A61423C40B9A0079C37A /* DetailViewController.swift */; };
@@ -25,6 +29,16 @@
 		7D9F071B23C2454D00DFDF56 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9F071A23C2454D00DFDF56 /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7D5BD8EC23CBC9FE0047AEE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D16772823C14CD9006F665A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D16772F23C14CD9006F665A;
+			remoteInfo = MeLiApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		7D16773023C14CD9006F665A /* MeLiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeLiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D16773323C14CD9006F665A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +48,12 @@
 		7D16773D23C14CDA006F665A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D16773F23C14CDA006F665A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D16774923C152A9006F665A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7D5BD8E723CBC9FE0047AEE9 /* MeLiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeLiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D5BD8E923CBC9FE0047AEE9 /* MeLiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiAppTests.swift; sourceTree = "<group>"; };
+		7D5BD8EB23CBC9FE0047AEE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5BD8F123CBCC880047AEE9 /* ResponseById.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResponseById.json; sourceTree = "<group>"; };
+		7D5BD8F523CBD72B0047AEE9 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
+		7D5BD8F723CBD9710047AEE9 /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
 		7D68BA2E23C7F89F001D97E9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		7D68BA3023C7F94C001D97E9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		7D74A61423C40B9A0079C37A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0967C03383961AB990DF7464 /* Pods_MeLiApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D5BD8E423CBC9FE0047AEE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7D16773223C14CD9006F665A /* MeLiApp */,
+				7D5BD8E823CBC9FE0047AEE9 /* MeLiAppTests */,
 				7D16773123C14CD9006F665A /* Products */,
 				70422624BBB76F4E2570B773 /* Pods */,
 				28868E0E72B6F76DE617CD95 /* Frameworks */,
@@ -91,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				7D16773023C14CD9006F665A /* MeLiApp.app */,
+				7D5BD8E723CBC9FE0047AEE9 /* MeLiAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +127,7 @@
 		7D16773223C14CD9006F665A /* MeLiApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D5BD8F423CBD7140047AEE9 /* Protocols */,
 				7D16774823C1522F006F665A /* NetworkManager */,
 				7D16774523C151E4006F665A /* Model */,
 				7D16774723C15220006F665A /* View */,
@@ -150,6 +180,33 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
+		7D5BD8E823CBC9FE0047AEE9 /* MeLiAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D5BD8F323CBD6970047AEE9 /* Mocks */,
+				7D5BD8F123CBCC880047AEE9 /* ResponseById.json */,
+				7D5BD8E923CBC9FE0047AEE9 /* MeLiAppTests.swift */,
+				7D5BD8EB23CBC9FE0047AEE9 /* Info.plist */,
+			);
+			path = MeLiAppTests;
+			sourceTree = "<group>";
+		};
+		7D5BD8F323CBD6970047AEE9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7D5BD8F723CBD9710047AEE9 /* MockNetworkRequest.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		7D5BD8F423CBD7140047AEE9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7D5BD8F523CBD72B0047AEE9 /* ViewModelProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +229,24 @@
 			productReference = 7D16773023C14CD9006F665A /* MeLiApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7D5BD8E623CBC9FE0047AEE9 /* MeLiAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D5BD8F023CBC9FE0047AEE9 /* Build configuration list for PBXNativeTarget "MeLiAppTests" */;
+			buildPhases = (
+				7D5BD8E323CBC9FE0047AEE9 /* Sources */,
+				7D5BD8E423CBC9FE0047AEE9 /* Frameworks */,
+				7D5BD8E523CBC9FE0047AEE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D5BD8ED23CBC9FE0047AEE9 /* PBXTargetDependency */,
+			);
+			name = MeLiAppTests;
+			productName = MeLiAppTests;
+			productReference = 7D5BD8E723CBC9FE0047AEE9 /* MeLiAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +259,10 @@
 				TargetAttributes = {
 					7D16772F23C14CD9006F665A = {
 						CreatedOnToolsVersion = 10.2;
+					};
+					7D5BD8E623CBC9FE0047AEE9 = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 7D16772F23C14CD9006F665A;
 					};
 				};
 			};
@@ -201,6 +280,7 @@
 			projectRoot = "";
 			targets = (
 				7D16772F23C14CD9006F665A /* MeLiApp */,
+				7D5BD8E623CBC9FE0047AEE9 /* MeLiAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +293,14 @@
 				7D16773E23C14CDA006F665A /* LaunchScreen.storyboard in Resources */,
 				7D16773B23C14CDA006F665A /* Assets.xcassets in Resources */,
 				7D16773923C14CD9006F665A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D5BD8E523CBC9FE0047AEE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D5BD8F223CBCC880047AEE9 /* ResponseById.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,12 +363,30 @@
 				7D68BA3123C7F94C001D97E9 /* DetailModel.swift in Sources */,
 				7D16773423C14CD9006F665A /* AppDelegate.swift in Sources */,
 				7D9F071523C22CF500DFDF56 /* ResultsViewController.swift in Sources */,
+				7D5BD8F623CBD72B0047AEE9 /* ViewModelProtocols.swift in Sources */,
 				7D8E4EAB23CA7D9300E0BD57 /* DescriptionModel.swift in Sources */,
 				7D74A61523C40B9A0079C37A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D5BD8E323CBC9FE0047AEE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D5BD8F823CBD9710047AEE9 /* MockNetworkRequest.swift in Sources */,
+				7D5BD8EA23CBC9FE0047AEE9 /* MeLiAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D5BD8ED23CBC9FE0047AEE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D16772F23C14CD9006F665A /* MeLiApp */;
+			targetProxy = 7D5BD8EC23CBC9FE0047AEE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7D16773723C14CD9006F665A /* Main.storyboard */ = {
@@ -454,6 +560,44 @@
 			};
 			name = Release;
 		};
+		7D5BD8EE23CBC9FE0047AEE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeLiAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MauroWorobiej.MeLiAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeLiApp.app/MeLiApp";
+			};
+			name = Debug;
+		};
+		7D5BD8EF23CBC9FE0047AEE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MeLiAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MauroWorobiej.MeLiAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeLiApp.app/MeLiApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -471,6 +615,15 @@
 			buildConfigurations = (
 				7D16774323C14CDA006F665A /* Debug */,
 				7D16774423C14CDA006F665A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D5BD8F023CBC9FE0047AEE9 /* Build configuration list for PBXNativeTarget "MeLiAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D5BD8EE23CBC9FE0047AEE9 /* Debug */,
+				7D5BD8EF23CBC9FE0047AEE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

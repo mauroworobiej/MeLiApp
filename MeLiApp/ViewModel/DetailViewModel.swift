@@ -10,67 +10,38 @@ import Foundation
 
 class DetailViewModel {
     
-//    https://api.mercadolibre.com/items?ids=
-    
-    private let networkManager = NetworkManager()
-//    private let url : URL
+    private let networkManager: FetchItemProtocol
     private var itemDetail: DetailModel!
     private var itemDescription: DescriptionModel!
     
-    init(itemId: String, completion: @escaping () -> Void) {
-//        let urlString = "https://api.mercadolibre.com/sites/MLA/search?q=" + itemName
-//        guard let url = URL(string: urlString) else {
-//            fatalError("Invalid URL")
-//        }
-//        self.url = url
-        // I pass a completion to wait the data load
-        self.fetchItemsById(completion, itemId: itemId)
-    }
-    
-    private func fetchItemsById(_ completion: @escaping () -> Void, itemId: String) {
+    init(networkManager: FetchItemProtocol = NetworkManager(), itemId: String, completion: @escaping () -> Void) {
         
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "api.mercadolibre.com"
-        urlComponents.path = "/items/" + itemId
+        self.networkManager = networkManager
         
-        guard let url = urlComponents.url else {//URL(string: urlString) else {
-            fatalError("Invalid URL")
-        }
-        networkManager.performRequest(type: DetailModel.self, url: url) { [weak self] result in
+        networkManager.fetchItemsById(itemId: itemId) { [weak self] result in
             guard let strongSelf = self else { return }
             switch result {
-            case .success(let parsedJson):
-                strongSelf.itemDetail = parsedJson
+            case .success(let data):
+                strongSelf.itemDetail = data
             case .failure(let error):
-                print("failed parsing JSON", error)
+                print("Fetch Error: \(error)")
             }
-//            completion()
-            strongSelf.fetchItemDescription(completion, itemId: itemId)
-        }
-    }
-    
-    private func fetchItemDescription(_ completion: @escaping () -> Void, itemId: String) {
-        
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "api.mercadolibre.com"
-        urlComponents.path = "/items/" + itemId + "/descriptions"
-        
-        guard let url = urlComponents.url else {//URL(string: urlString) else {
-            fatalError("Invalid URL")
-        }
-        networkManager.performRequest(type: DescriptionModel.self, url: url) { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-            case .success(let parsedJson):
-                strongSelf.itemDescription = parsedJson
-            case .failure(let error):
-                print("failed parsing JSON", error)
-            }
+            
+            networkManager.fetchItemDescription(itemId: itemId) { [weak self] result in
+                guard let strongSelf = self else { return }
+                switch result {
+                case .success(let data):
+                    strongSelf.itemDescription = data
+                case .failure(let error):
+                    print("Fetch Error: \(error)")
+                }
+            // Return the completion only when I loaded the two models
             completion()
+            }
         }
     }
+    
+    
     
     func getItemImage(index: Int) -> String {
         return itemDetail.pictures[index].url

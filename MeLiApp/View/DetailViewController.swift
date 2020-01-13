@@ -63,7 +63,6 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionCell", for: indexPath) as! DetailCollectionViewCell
-//        let cell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionCell", for: indexPath) as! CollectionViewCell
         let imagenUrl = detailViwModel.getItemImage(index: indexPath.row)
         DispatchQueue.main.async {
             cell.itemImage.sd_setImage(with: URL(string: imagenUrl), placeholderImage: nil, options: [], completed: nil)
