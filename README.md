@@ -4,6 +4,10 @@ App que utiliza la API de Mercado Libre para buscar productos por nombre,
 muestra los resultados en una tabla, y permite acceder al detalle de cada item.
 Si bien quedan muchas cosas por mejorar, por falta de tiempo se decidio entregar este proyecto en este estado, para lugo con el tiempo ir corrigiendo errores y agregando funcionalidades.
 
+### ScreenShots
+<img width="200" alt="Screen Shot 2020-01-13 at 00 35 01" src="https://user-images.githubusercontent.com/30415736/72232096-c33e5080-359d-11ea-80cd-26eb5b181f16.png">            <img width="200" alt="Screen Shot 2020-01-13 at 00 35 20" src="https://user-images.githubusercontent.com/30415736/72232100-c76a6e00-359d-11ea-8bef-af5769242da7.png">           <img width="200" alt="Screen Shot 2020-01-13 at 00 35 35" src="https://user-images.githubusercontent.com/30415736/72232104-cafdf500-359d-11ea-8960-7632be1b388a.png">
+
+
 ## Estructura
 
 Opte por utilizar `Model View ViewModel` para mantener las vistas y los modelos desacoplados. 
@@ -51,5 +55,5 @@ Otra de las ventajas de esta libreria es que cuenta con una cache que permita al
 Link al repo de [SDWebImages](https://github.com/%/SDWebImage).
 
 ## Permisos 
-para hacer uso del framework antes mencionado es necesario agregar dentro de las opciones del `info.plist` el diccionario `App Transport Security Settings` con la key `Allow arbitrary loads` y su valor en `YES`.
+Para hacer uso del framework antes mencionado es necesario agregar dentro de las opciones del `info.plist` el diccionario `App Transport Security Settings` con la key `Allow arbitrary loads` y su valor en `YES`.
 
